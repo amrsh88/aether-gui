@@ -86,6 +86,12 @@ jobs:
         working-directory: desktop/src-tauri
         run: cargo fmt --check
 
+      # The frontend must exist before any cargo step: tauri-build's macro
+      # validates the frontendDist path at compile time and panics without it.
+      - name: Typecheck and build the frontend
+        working-directory: desktop
+        run: npm run build
+
       - name: Clippy
         working-directory: desktop/src-tauri
         run: cargo clippy -- -D warnings
