@@ -21,8 +21,13 @@ jobs:
           cache: npm
           cache-dependency-path: desktop/package-lock.json
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        working-directory: desktop
+        run: npm ci
+
+      - name: Typecheck and build the frontend
+        working-directory: desktop
+        run: npm run build
 
   windows:
     runs-on: windows-latest
