@@ -64,18 +64,28 @@ impl Counters {
     }
 }
 
-/// Resolve `wintun.dll`, preferring the copy Tauri bundles next to the binary.
+/// Resolve `wintun.dll`, checking every place it might have landed.
 ///
-/// Falling back to the bare filename lets Windows use its normal search order,
-/// which is what `cargo run` during development relies on.
+/// Order of preference:
+///   1. next to the executable — the normal installed layout;
+///   2. `resources\` beside the executable — where Tauri puts files when a
+///      resource map isn't used to flatten them;
+///   3. bare filename — Windows' own search order, which covers `cargo run`.
 #[cfg(windows)]
 fn wintun_path() -> std::ffi::OsString {
-    std::env::current_exe()
-        .ok()
-        .and_then(|exe| exe.parent().map(|dir| dir.join("wintun.dll")))
-        .filter(|path| path.exists())
-        .map(Into::into)
-        .unwrap_or_else(|| "wintun.dll".into())
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let beside = dir.join("wintun.dll");
+            if beside.exists() {
+                return beside.into();
+            }
+            let in_resources = dir.join("resources").join("wintun.dll");
+            if in_resources.exists() {
+                return in_resources.into();
+            }
+        }
+    }
+    "wintun.dll".into()
 }
 
 /// Create the TUN adapter, addressed and up.

@@ -50,10 +50,10 @@
       "icons/128x128@2x.png",
       "icons/icon.ico"
     ],
-    "resources": [
-      "resources/wintun.dll",
-      "resources/WebView2Loader.dll"
-    ],
+    "resources": {
+      "resources/wintun.dll": "./wintun.dll",
+      "resources/WebView2Loader.dll": "./WebView2Loader.dll"
+    },
     "copyright": "\u00a9 2026 Amirreza (NetRepublic). AGPL-3.0. Aether core \u00a9 CluvexStudio.",
     "shortDescription": "Modern Windows client for the Aether core",
     "longDescription": "Aether GUI by NetRepublic \u2014 a Windows front end for the Aether censorship-circumvention core, with System Proxy and Full System Tunnel modes. Made by Amirreza. Engine by CluvexStudio.",
