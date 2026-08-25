@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Aether GUI",
+  "version": "1.0.0",
+  "identifier": "xyz.netrepublic.aether-gui",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Aether GUI",
+        "width": 420,
+        "height": 680,
+        "minWidth": 400,
+        "minHeight": 620,
+        "resizable": true,
+        "maximizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": true,
+        "center": true,
+        "theme": "Dark",
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+    },
+    "trayIcon": {
+      "id": "main",
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": false,
+      "tooltip": "Aether GUI by NetRepublic"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis",
+      "msi"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "resources/wintun.dll",
+      "resources/WebView2Loader.dll"
+    ],
+    "copyright": "\u00a9 2026 Amirreza (NetRepublic). AGPL-3.0. Aether core \u00a9 CluvexStudio.",
+    "shortDescription": "Modern Windows client for the Aether core",
+    "longDescription": "Aether GUI by NetRepublic \u2014 a Windows front end for the Aether censorship-circumvention core, with System Proxy and Full System Tunnel modes. Made by Amirreza. Engine by CluvexStudio.",
+    "windows": {
+      "nsis": {
+        "installMode": "perMachine",
+        "languages": [
+          "English"
+        ]
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
+  }
+}

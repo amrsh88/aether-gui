@@ -1,0 +1,38 @@
+{
+  "name": "aether-gui",
+  "productName": "Aether GUI by NetRepublic",
+  "version": "1.0.0",
+  "description": "A modern Windows client for the Aether censorship-circumvention core, with System Proxy and Full System Tunnel modes.",
+  "author": "Amirreza (NetRepublic)",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.1.1",
+    "@tauri-apps/plugin-opener": "2.2.5",
+    "framer-motion": "11.15.0",
+    "lucide-react": "0.469.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zustand": "5.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.1.0",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.2",
+    "vite": "6.0.7"
+  }
+}

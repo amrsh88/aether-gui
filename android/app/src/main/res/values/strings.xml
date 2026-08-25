@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aether by Net Republic</string>
+    <string name="notification_channel_name">Net Republic Service</string>
+    <string name="notification_channel_desc">Keeps Net Republic VPN tunnel running</string>
+    <string name="notification_title_connected">Net Republic Connected</string>
+    <string name="notification_title_disconnected">Net Republic Disconnected</string>
+    <string name="notification_title_connecting">Net Republic Connecting…</string>
+</resources>

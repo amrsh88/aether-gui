@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+dist/
+
+# The Aether core is cloned separately; see README.md
+core/
+
+# Wintun is downloaded from wintun.net, not redistributed here
+src-tauri/resources/wintun.dll
+
+# Rust
+target/
+src-tauri/target/
+
+# Tauri codegen
+src-tauri/gen/schemas/
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

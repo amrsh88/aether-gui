@@ -1,0 +1,23 @@
+# --- global ---
+.DS_Store
+Thumbs.db
+
+# --- desktop (see desktop/.gitignore for more) ---
+desktop/node_modules/
+desktop/dist/
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+desktop/src-tauri/resources/wintun.dll
+core/
+
+# --- android ---
+**/*.iml
+.gradle/
+android/local.properties
+.idea/
+android/.gradle/
+android/build/
+android/app/build/
+android/.kotlin/
+android/.artifacts/
+android/.cxx/

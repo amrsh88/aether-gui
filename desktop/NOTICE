@@ -1,0 +1,29 @@
+MIT License is NOT used here — see LICENSE for the AGPL-3.0 text.
+
+This file records why.
+
+The Aether core is licensed AGPL-3.0. Linking it into this application as a library
+makes the combined work a derivative, so this GUI is AGPL-3.0-or-later too, and its
+source is published as the licence requires.
+
+Practical consequences for anyone building on this:
+
+  * You may use, modify and redistribute it, including commercially.
+  * If you distribute a modified version, or run one as a network service, you must
+    make your source available under the same licence.
+  * You must preserve the copyright and licence notices, and state your changes.
+
+Third-party components and their licences:
+
+  Aether core        AGPL-3.0        © CluvexStudio
+  Cloudflare Quiche  BSD-2-Clause    © Cloudflare, Inc.
+  Wintun             GPL-2.0         © WireGuard LLC (loaded at runtime, not bundled)
+  Tauri              MIT / Apache-2.0
+  ipstack            Apache-2.0
+  React              MIT
+  Framer Motion      MIT
+  Lucide             ISC
+
+"Aether" is a trademark of CluvexStudio. This project is an independent front end,
+not affiliated with or endorsed by them. See core/TRADEMARK.md in the upstream
+repository for their policy.
