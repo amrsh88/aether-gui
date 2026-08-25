@@ -78,7 +78,9 @@ jobs:
         with:
           workspaces: desktop/src-tauri
 
-      - run: npm ci
+      - name: Install dependencies
+        working-directory: desktop
+        run: npm ci
 
       - name: Check formatting
         working-directory: desktop/src-tauri
@@ -93,6 +95,7 @@ jobs:
         run: cargo test
 
       - name: Build the installers
+        working-directory: desktop
         run: npm run tauri:build
 
       - uses: actions/upload-artifact@v4
